@@ -69,6 +69,9 @@ const PP_I18N = {
     "contact.form.email": "Email",
     "contact.form.message": "Mensaje",
     "contact.form.submit": "Enviar mensaje",
+    "contact.form.sending": "Enviando...",
+    "contact.form.success": "¡Gracias! Tu mensaje fue enviado. Te responderemos pronto.",
+    "contact.form.error": "Hubo un problema al enviar tu mensaje. Intenta de nuevo o escríbenos directamente.",
     "contact.alt.text": "O escríbenos directamente a",
 
     "footer.terms": "Términos y condiciones",
@@ -194,6 +197,9 @@ const PP_I18N = {
     "contact.form.email": "Email",
     "contact.form.message": "Message",
     "contact.form.submit": "Send message",
+    "contact.form.sending": "Sending...",
+    "contact.form.success": "Thanks! Your message was sent. We'll get back to you soon.",
+    "contact.form.error": "There was a problem sending your message. Please try again or email us directly.",
     "contact.alt.text": "Or email us directly at",
 
     "footer.terms": "Terms & conditions",
@@ -254,9 +260,17 @@ const PP_I18N = {
 };
 
 const PP_DEFAULT_LANG = "es";
+let ppCurrentLang = PP_DEFAULT_LANG;
+
+// Devuelve la traducción de `key` en el idioma activo (para usar desde JS, no solo el DOM)
+function ppT(key) {
+  const dict = PP_I18N[ppCurrentLang] || PP_I18N[PP_DEFAULT_LANG];
+  return dict[key] || key;
+}
 
 function ppApplyLang(lang) {
   const dict = PP_I18N[lang] || PP_I18N[PP_DEFAULT_LANG];
+  ppCurrentLang = PP_I18N[lang] ? lang : PP_DEFAULT_LANG;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");

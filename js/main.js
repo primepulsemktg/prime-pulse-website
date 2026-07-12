@@ -42,19 +42,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerYear = document.getElementById("footer-year");
   if (footerYear) footerYear.textContent = new Date().getFullYear();
 
-  // Formulario de contacto — abre el cliente de correo con los datos
+  // Formulario de contacto — envía los datos a Web3Forms
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+    const statusEl = document.getElementById("form-status");
+    const submitLabel = submitBtn.textContent;
+
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const name = contactForm.elements["name"].value.trim();
-      const email = contactForm.elements["email"].value.trim();
-      const message = contactForm.elements["message"].value.trim();
 
-      const subject = encodeURIComponent(`Nueva consulta de ${name} — Prime Pulse`);
-      const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
+      // Honeypot: si un bot marcó este campo oculto, se descarta el envío en silencio
+      if (contactForm.elements["botcheck"].checked) return;
 
-      window.location.href = `mailto:hello@primepulsemktg.com?subject=${subject}&body=${body}`;
+      submitBtn.disabled = true;
+      submitBtn.textContent = ppT("contact.form.sending");
+      statusEl.textContent = "";
+      statusEl.className = "form-status";
+
+      try {
+        const formData = new FormData(contactForm);
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: formData,
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          statusEl.textContent = ppT("contact.form.success");
+          statusEl.className = "form-status is-success";
+          contactForm.reset();
+        } else {
+          throw new Error(result.message || "Web3Forms error");
+        }
+      } catch (err) {
+        statusEl.textContent = ppT("contact.form.error");
+        statusEl.className = "form-status is-error";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+      }
     });
   }
 });

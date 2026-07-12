@@ -242,6 +242,10 @@
 
     <div class="contact-grid">
       <form class="contact-form" id="contact-form">
+        <input type="hidden" name="access_key" value="f269dcf0-4371-420b-8f72-7810a0dbc859">
+        <input type="hidden" name="subject" value="Nueva consulta desde Prime Pulse">
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
         <label class="form-field">
           <span data-i18n="contact.form.name">Nombre</span>
           <input type="text" name="name" required autocomplete="name">
@@ -255,6 +259,7 @@
           <textarea name="message" rows="4" required></textarea>
         </label>
         <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Enviar mensaje</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
 
       <div class="contact-alt">

@@ -243,7 +243,7 @@ button {
 }
 
 .hero-logo {
-  height: 44px;
+  height: 88px;
   width: auto;
   margin-bottom: 8px;
 }
@@ -283,6 +283,7 @@ button {
 @media (min-width: 768px) {
   .hero { padding: 96px 0 110px; }
   .hero-subtext { font-size: 1.15rem; }
+  .hero-logo { height: 104px; }
 }
 
 @media (min-width: 960px) {
@@ -692,6 +693,30 @@ button {
 .form-field textarea:focus {
   outline: none;
   border-color: var(--pulse-blue);
+}
+
+.botcheck {
+  display: none;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 1.2em;
+}
+
+.form-status.is-success {
+  color: #1a8a4a;
+}
+
+.form-status.is-error {
+  color: #c23a3a;
 }
 
 .contact-alt {

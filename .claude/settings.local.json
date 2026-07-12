@@ -15,7 +15,10 @@
       "Bash(PDIR=\"/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse\" *)",
       "Bash(lsof -ti:8744)",
       "Bash(lsof -ti:8745)",
-      "Bash(lsof -ti:8746)"
+      "Bash(lsof -ti:8746)",
+      "Bash(lsof -ti:8747)",
+      "Bash(lsof -ti:8748)",
+      "Bash(lsof -ti:8749)"
     ]
   }
 }
