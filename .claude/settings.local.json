@@ -18,7 +18,8 @@
       "Bash(lsof -ti:8746)",
       "Bash(lsof -ti:8747)",
       "Bash(lsof -ti:8748)",
-      "Bash(lsof -ti:8749)"
+      "Bash(lsof -ti:8749)",
+      "Bash(lsof -ti:8750)"
     ]
   }
 }

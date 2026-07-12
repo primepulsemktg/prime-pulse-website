@@ -24,20 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Toggle de región de precios (USA / Latam)
-  const pricingSection = document.querySelector(".pricing");
-  if (pricingSection) {
-    pricingSection.querySelectorAll("[data-region-btn]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const region = btn.getAttribute("data-region-btn");
-        pricingSection.setAttribute("data-region", region);
-        pricingSection.querySelectorAll("[data-region-btn]").forEach((b) => {
-          b.classList.toggle("is-active", b === btn);
-        });
-      });
-    });
-  }
-
   // Año dinámico en el footer
   const footerYear = document.getElementById("footer-year");
   if (footerYear) footerYear.textContent = new Date().getFullYear();

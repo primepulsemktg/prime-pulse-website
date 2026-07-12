@@ -27,7 +27,7 @@ const PP_I18N = {
 
     "pricing.eyebrow": "Precios",
     "pricing.title": "Planes simples y transparentes",
-    "pricing.subtitle": "Elige la región de tu negocio para ver precios en tu moneda.",
+    "pricing.subtitle": "Elige el plan que mejor se adapte al crecimiento de tu negocio.",
     "pricing.perMonth": "/mes",
     "pricing.popular": "Más elegido",
     "pricing.starter.name": "Starter",
@@ -155,7 +155,7 @@ const PP_I18N = {
 
     "pricing.eyebrow": "Pricing",
     "pricing.title": "Simple, transparent plans",
-    "pricing.subtitle": "Choose your business region to see pricing in your currency.",
+    "pricing.subtitle": "Choose the plan that best fits your business growth.",
     "pricing.perMonth": "/mo",
     "pricing.popular": "Most popular",
     "pricing.starter.name": "Starter",

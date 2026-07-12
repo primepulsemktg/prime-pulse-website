@@ -409,34 +409,6 @@ button {
 /* =========================================================
    Pricing
    ========================================================= */
-.region-toggle {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  background: #fff;
-  border: 1px solid rgba(37, 42, 56, 0.1);
-  border-radius: 999px;
-  padding: 6px;
-  max-width: 220px;
-  margin: 0 auto 40px;
-}
-
-.region-btn {
-  flex: 1;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: rgba(37, 42, 56, 0.55);
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.region-btn.is-active {
-  background: var(--gradient-brand);
-  color: #fff;
-}
-
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -488,10 +460,6 @@ button {
   font-weight: 500;
   color: rgba(37, 42, 56, 0.55);
 }
-
-.price-latam { display: none; }
-.pricing[data-region="latam"] .price-usa { display: none; }
-.pricing[data-region="latam"] .price-latam { display: inline; }
 
 .price-features {
   list-style: none;
