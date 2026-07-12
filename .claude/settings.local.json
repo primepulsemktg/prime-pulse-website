@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/catherineingarevalo/Documents/Documents - Catherine's MacBook Air/Personal/**)",
+      "Read(//Users/catherineingarevalo/Documents/Documents - Catherine's MacBook Air/Personal/PrimePulse/**)",
+      "Bash(ls -la \"/Users/catherineingarevalo/Documents/\" 2>&1 | head -50)",
+      "Bash(sips -g pixelWidth -g pixelHeight '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse/Prime Pulse Logo.png' '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse/Prime Best logo final.png' '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse/zoomingroomin_logo-tag.png')",
+      "Bash(curl -sI http://localhost:8743/index.html)",
+      "Bash(lsof -ti:8743)",
+      "Bash(xargs kill)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"import PIL\")",
+      "Bash(pip3 --version)",
+      "Bash(pip3 install *)",
+      "Bash(PDIR=\"/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse\" *)",
+      "Bash(lsof -ti:8744)",
+      "Bash(lsof -ti:8745)",
+      "Bash(lsof -ti:8746)"
+    ]
+  }
+}
