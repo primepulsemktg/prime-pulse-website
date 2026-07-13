@@ -1,13 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  ppInitLang();
-
-  // Selector de idioma
-  document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      ppApplyLang(btn.getAttribute("data-lang-btn"));
-    });
-  });
-
   // Menú móvil
   const navToggle = document.getElementById("nav-toggle");
   const mainNav = document.getElementById("main-nav");
@@ -33,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     const submitBtn = contactForm.querySelector("button[type='submit']");
     const statusEl = document.getElementById("form-status");
-    const submitLabel = submitBtn.textContent;
+    const idleLabel = submitBtn.dataset.idleLabel || submitBtn.textContent;
+    const sendingLabel = submitBtn.dataset.sendingLabel || idleLabel;
 
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -42,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (contactForm.elements["botcheck"].checked) return;
 
       submitBtn.disabled = true;
-      submitBtn.textContent = ppT("contact.form.sending");
+      submitBtn.textContent = sendingLabel;
       statusEl.textContent = "";
       statusEl.className = "form-status";
 
@@ -56,18 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await res.json();
 
         if (result.success) {
-          statusEl.textContent = ppT("contact.form.success");
+          statusEl.textContent = statusEl.dataset.successMsg;
           statusEl.className = "form-status is-success";
           contactForm.reset();
         } else {
           throw new Error(result.message || "Web3Forms error");
         }
       } catch (err) {
-        statusEl.textContent = ppT("contact.form.error");
+        statusEl.textContent = statusEl.dataset.errorMsg;
         statusEl.className = "form-status is-error";
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = submitLabel;
+        submitBtn.textContent = idleLabel;
       }
     });
   }

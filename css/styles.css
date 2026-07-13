@@ -145,30 +145,24 @@ button {
   gap: 10px;
 }
 
-.lang-switch {
-  display: flex;
+.lang-switch-link {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 36px;
+  padding: 8px 12px;
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
   background: var(--blue-tint);
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-
-.lang-btn {
-  padding: 2px 4px;
-  color: rgba(37, 42, 56, 0.45);
-  transition: color 0.15s ease;
-}
-
-.lang-btn.is-active {
   color: var(--pulse-blue);
+  border-radius: 999px;
+  transition: background 0.15s ease;
 }
 
-.lang-divider {
-  color: rgba(37, 42, 56, 0.25);
+.lang-switch-link:hover {
+  background: rgba(43, 101, 212, 0.16);
 }
 
 .btn-nav { display: none; }
@@ -755,7 +749,7 @@ button {
 
 .footer-copy {
   font-size: 0.82rem;
-  color: rgba(248, 250, 255, 0.5);
+  color: rgba(248, 250, 255, 0.62);
 }
 
 @media (min-width: 640px) {

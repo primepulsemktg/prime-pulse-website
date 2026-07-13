@@ -19,7 +19,17 @@
       "Bash(lsof -ti:8747)",
       "Bash(lsof -ti:8748)",
       "Bash(lsof -ti:8749)",
-      "Bash(lsof -ti:8750)"
+      "Bash(lsof -ti:8750)",
+      "Bash(echo \"--- Estructura del proyecto ---\")",
+      "Bash(find '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse' -maxdepth 2 -not -path */.claude* -not -path */.git*)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g dpiWidth '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse/assets/logo-prime-pulse.png' '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse/assets/logo-primebest.png' '/Users/catherineingarevalo/Documents/Documents - Catherine’s MacBook Air/Personal/PrimePulse/assets/logo-zoomin-groomin.png')",
+      "Skill(artifact-design)",
+      "Skill(artifact-design:*)",
+      "Bash(ls /System/Library/Fonts/Supplemental/ 2>/dev/null | grep -i \"arial\\\\|helvetica\\\\|avenir\\\\|futura\" ; echo \"---\"; ls /System/Library/Fonts/ 2>/dev/null | head -30)",
+      "Bash(python3 -c \"import numpy; print\\(numpy.__version__\\)\")",
+      "Bash(python3 -c \"import numpy; print\\('ok', numpy.__version__\\)\")",
+      "Bash(python3)",
+      "Bash(lsof -ti:8760)"
     ]
   }
 }
